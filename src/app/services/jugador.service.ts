@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { Jugador } from '../models/Jugador';
 
 @Injectable({
@@ -6,17 +8,21 @@ import { Jugador } from '../models/Jugador';
 })
 export class JugadorService {
 
-  constructor() { }
+  private URL: string;
 
-  public getAllJugadores(): Jugador[] {
-    // Obtener los jugadores de a la API
-    // DEVELOPMENT:: MOCK
-    return [
-      new Jugador('1', 'Juan', 22),
-      new Jugador('2', 'Pedro', 10),
-      new Jugador('3', 'Ana', 5)
-    ];
+  constructor(private httpClient: HttpClient) {
+    this.URL = 'http://localhost:5200/'
+  }
+
+  public getAllJugadores(): Observable<any> {
+    return this.httpClient.get( `${this.URL}puntuaciones`)
   }
 
   //TODO: borrar, insertar, update, delete
+
+  public addJugador(jugador: Jugador) {
+    const  body = JSON.stringify( jugador );
+    const headers = new HttpHeaders( {'Content-type': 'application/json'} );
+    return this.httpClient.post( `${this.URL}puntuacion`, body, {headers} );
+  }
 }
