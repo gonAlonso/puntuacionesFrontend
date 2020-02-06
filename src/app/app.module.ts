@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { ListaJugadorComponent } from './lista-jugador/lista-jugador.component';
 import { AddJugadorComponent } from './add-jugador/add-jugador.component';
 import { MenuComponent } from './menu/menu.component';
+import { EditJugadorComponent } from './edit-jugador/edit-jugador.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListaJugadorComponent,
     AddJugadorComponent,
-    MenuComponent
+    MenuComponent,
+    EditJugadorComponent
   ],
   imports: [
     BrowserModule,

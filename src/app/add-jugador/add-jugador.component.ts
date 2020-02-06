@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Jugador } from '../models/Jugador';
 import { JugadorService } from '../services/jugador.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-jugador',
@@ -11,7 +12,7 @@ export class AddJugadorComponent implements OnInit {
 
   public jugador: Jugador;
 
-  constructor( private jugadorService: JugadorService) {
+  constructor( private jugadorService: JugadorService, private router: Router) {
     this.jugador = new Jugador('', '', 0);
   }
 
@@ -19,7 +20,9 @@ export class AddJugadorComponent implements OnInit {
 
   onSubmit() {
     this.jugadorService.addJugador( this.jugador).subscribe(
-      response => {},
+      response => {
+        this.router.navigate(['/listaJugadores'])
+      },
       err => { alert('Error al guardar el jugador:' + err ); },
       () => {}
     )
