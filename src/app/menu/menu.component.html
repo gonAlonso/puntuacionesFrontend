@@ -1,3 +1,8 @@
-<a [routerLink]="['/listaJugadores']">Lista de Jugadores</a>
+<a href="#" [routerLink]="['/listaJugadores']">Lista de Jugadores</a>
 <br/>
-<a [routerLink]="['/addJugador']">Añadir nuevo Jugador</a>
+<a href="#" [routerLink]="['/addJugador']">Añadir nuevo Jugador</a>
+<br/>
+{{emailRegistrado()}}
+<a href="#" [routerLink]="['/login']">Login</a>
+<br/>
+<a href="#" (click)="logout">LogOut</a>

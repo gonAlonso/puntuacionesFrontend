@@ -1,0 +1,27 @@
+<h3>Login</h3>
+
+
+<form [formGroup]="form" (submit)="onSubmit(form.value)">
+  <label for="email">eMail</label>
+  <input type="email" name="email" formControlName="email"/>
+  <br/>
+  <label for="password">Password</label>
+  <input type="password" name="password" formControlName="password"/>
+  <br/>
+  <input type="submit" value="Enviar" [disabled]="form.invalid" />
+</form>
+
+<!--
+  Crear componente login
+  Creamos un servicio nuevo AuthService
+  añadir un elemento del menu login
+  añadimos la ruta de login que apunte al componente login
+  Editamos el template de compnenten login, con el tipico formulatio de logearse
+
+  email, pwd y login
+
+  Editamos la log de negocio del componente
+  Nos conectaremos con el backend, llamando a login
+  Guardamos el token en el localstorage
+
+-->
