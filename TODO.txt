@@ -1,0 +1,7 @@
+crear un compnente gestionPuntuaciones [tendrá un @Input() idUsuario **ejemplo12 ]
+crar la vista (listado de puntuaciones de usaurio y caja para añadir puntuacion + boton) + borrar puntuaciones
+crar la logica de negocio
+    -listar todas las puntuaciones
+    -borrar una puntuacion
+    -añadir una puntuacion nueva
+crar un servicio para trabajar con las puntuaciones
